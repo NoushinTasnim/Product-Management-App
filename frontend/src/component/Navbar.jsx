@@ -1,6 +1,6 @@
 import React from 'react'
 import '../index.css'
-import {Button, IconButton, Text, useColorMode} from "@chakra-ui/react";
+import {Box, Button, Container, Flex, Text, useColorMode, useColorModeValue} from "@chakra-ui/react";
 import { Link } from 'react-router-dom';
 import { IoMoon } from 'react-icons/io5';
 import { LuSun } from 'react-icons/lu';
@@ -9,7 +9,23 @@ import { PlusSquareIcon } from '@chakra-ui/icons';
 const Navbar = () => {
   const {colorMode, toggleColorMode} = useColorMode();
   return (
-    <div className='navbar'>
+      <Container
+        px={24}
+        py={2}
+        maxW={"full"}
+        position={'fixed'}
+        bgColor={useColorModeValue('#f5f5f5cc','#1a202ccc')}
+        zIndex={10}
+      >
+        <Flex
+          h={16}  
+          alignItems={'center'}
+          justifyContent={'space-between'}
+          flexDir={{
+            base: 'column',
+            sm: 'row'
+          }}
+        >
       <Link to='/'>
         <Text
           bgGradient="linear(to-l, #7928CA, #FF0080)"
@@ -28,7 +44,9 @@ const Navbar = () => {
           {colorMode === "light" ? <IoMoon/> : <LuSun/>}
         </Button>
       </div>
-    </div>
+      
+      </Flex>
+      </Container>
   )
 }
 

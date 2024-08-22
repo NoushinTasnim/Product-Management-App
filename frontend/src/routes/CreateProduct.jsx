@@ -38,7 +38,7 @@ const CreateProduct = () => {
   }
 
   return (
-    <Box py={24} px ={16}>
+    <Box py={24} px ={24}>
       <h1>Create New Product</h1>
       <VStack py={8} spacing={4} justifyContent={'space-between'} bg ={useColorModeValue("whitesmoke", "black.700")}>
         <Input

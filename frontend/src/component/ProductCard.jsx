@@ -72,16 +72,16 @@ const ProductCard = ({product}) => {
                 <Text
                     bgColor={useColorModeValue("black", "whitesmoke")}
                     bgClip="text"
-                    fontSize="3xl"
-                    fontWeight="regular"
+                    fontSize="2xl"
+                    fontWeight="bold"
                 >
                     {product.name}
                 </Text>
                 <Text
                     bgColor={useColorModeValue("black", "whitesmoke")}
                     bgClip="text"
-                    fontSize="2xl"
-                    fontWeight="extrabold"
+                    fontSize="3xl"
+                    fontWeight="regular"
                 >
                     {product.price} Tk
                 </Text>
