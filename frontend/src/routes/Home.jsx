@@ -12,21 +12,25 @@ const Home = () => {
   }, [fetchProducts]);
 
   return (
-    <Container maxW='container.xl' py={24}>
+    <Container maxW='container.2xl' py={36}>
       <VStack spacing={8}>
         <Text 
-          bgGradient="linear(to-l, #7928CA, #FF0080)"
+          bgGradient="linear(to-l, #7928CA66, #FF008066)"
           bgClip="text"
           fontSize="4xl"
           fontWeight="bold"
+          textAlign={'center'}
+          textShadow='-3.5px -3.5px #000000dd'
         >
           Current Products
         </Text>
         <SimpleGrid 
           columns={{
+            sm:2,
             base: 1,
-            md: 2,
+            md:3,
             lg: 4,
+            xl:5
           }}
           spacing={10}
           w={'full'}>

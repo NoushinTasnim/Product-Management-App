@@ -1,7 +1,8 @@
-import { Box, HStack, IconButton, Image, Input, Modal, ModalContent, ModalFooter, ModalOverlay, ModalHeader, ModalCloseButton, ModalBody, useDisclosure, useToast, Button, Text, useColorModeValue } from '@chakra-ui/react'
+import { Box, HStack, IconButton, Input, Modal, ModalContent, ModalFooter, ModalOverlay, ModalHeader, ModalCloseButton, ModalBody, useDisclosure, useToast, Button, Text, useColorModeValue } from '@chakra-ui/react'
 import {DeleteIcon, EditIcon} from '@chakra-ui/icons'
 import React, { useState } from 'react'
 import { useProductStore } from '../../store/product'
+import '../index.css'
 
 const ProductCard = ({product}) => {
     const { isOpen, onOpen, onClose } = useDisclosure()
@@ -58,37 +59,42 @@ const ProductCard = ({product}) => {
         }
     }
   return (
+    <Box>
         <Box
-            shadow={'2xl'}
             transition={'all .3s'}
-            rounded={'lg'}
             overflow={'hidden'}
-            _hover={{transform: 'translateY(-10px)', shadow: 'x1'}}
+            marginBottom={4}
         >
-        <Image src={product.image} alt={product.name} h={80} w={'full'} objectFit={'cover'}/>
-        
+        <img 
+            className='product-img'
+            src={product.image} 
+            alt={product.name} 
+            h={72} />
+        </Box>
         <Box>
-            <Box px={8}>
+            <Box px={8} textAlign={'center'}>
                 <Text
                     bgColor={useColorModeValue("black", "whitesmoke")}
                     bgClip="text"
-                    fontSize="2xl"
-                    fontWeight="bold"
+                    fontSize="xl"
+                    letterSpacing={2}
+                    lineHeight={1}
+                    textTransform={'uppercase'}
+                    marginBottom={2}
                 >
                     {product.name}
                 </Text>
                 <Text
                     bgColor={useColorModeValue("black", "whitesmoke")}
                     bgClip="text"
-                    fontSize="3xl"
-                    fontWeight="regular"
+                    fontSize="xl"
                 >
-                    {product.price} Tk
+                    TK. {product.price}
                 </Text>
             </Box>
-            <HStack spacing={2} justify={'right'} p={4}>
-                <IconButton icon={<EditIcon/>} onClick={onOpen} colorScheme='blue'></IconButton>
-                <IconButton icon={<DeleteIcon/>} onClick={()=>handleDeleteProduct(product._id)} colorScheme='red'></IconButton>
+            <HStack spacing={2} justify={'center'} p={4}>
+                <IconButton icon={<EditIcon bg={'transparent'}/>} onClick={onOpen} colorScheme='blue'></IconButton>
+                <IconButton icon={<DeleteIcon bg={'transparent'}/>} onClick={()=>handleDeleteProduct(product._id)} colorScheme='red'></IconButton>
             </HStack>
         </Box>
         <Modal

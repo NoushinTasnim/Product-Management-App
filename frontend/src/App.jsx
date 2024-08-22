@@ -6,13 +6,13 @@ import Navbar from './component/Navbar';
 
 function App() {
   return (
-    <Box minH={"100vh"} bg ={useColorModeValue("whitesmoke", "black.700")}>
+    <div>
       <Navbar/>
       <Routes>
         <Route path="/" element={<Home/>}></Route>
         <Route path="/create" element={<CreateProduct/>}></Route>
       </Routes>
-    </Box>
+    </div>
   )
 }
 

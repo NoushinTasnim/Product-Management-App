@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {useColorModeValue, Input, Button, useToast, Box, VStack} from "@chakra-ui/react";
+import {useColorModeValue, Input, Button, useToast, Box, VStack, Text} from "@chakra-ui/react";
 import { useProductStore } from '../../store/product';
 
 const CreateProduct = () => {
@@ -38,9 +38,18 @@ const CreateProduct = () => {
   }
 
   return (
-    <Box py={24} px ={24}>
-      <h1>Create New Product</h1>
-      <VStack py={8} spacing={4} justifyContent={'space-between'} bg ={useColorModeValue("whitesmoke", "black.700")}>
+    <Box py={36} px ={24}>
+      <Text 
+          bgGradient="linear(to-l, #7928CA66, #FF008066)"
+          bgClip="text"
+          fontSize="4xl"
+          fontWeight="bold"
+          textAlign={'center'}
+          textShadow='-3.5px -3.5px #000000dd'
+        >
+          Create New Product
+        </Text>
+      <VStack py={8} spacing={4} justifyContent={'space-between'} bg ={'rgb(255, 247, 236)'}>
         <Input
           placeholder="Product Name"
           name="name"
